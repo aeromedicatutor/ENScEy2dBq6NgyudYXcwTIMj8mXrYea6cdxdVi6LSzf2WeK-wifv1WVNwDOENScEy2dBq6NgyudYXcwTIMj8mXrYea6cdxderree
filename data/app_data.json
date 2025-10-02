@@ -21,7 +21,7 @@
     { "nome": "UNIMED ARAGUARI", "pct": 0.74, "treinado": true, "fornecedores": [] },
     { "nome": "UNIMED CIRCUITO DAS ÁGUAS", "pct": 0.64, "treinado": true, "fornecedores": [] },
     { "nome": "UNIMED LAVRAS", "pct": 0.61, "treinado": false, "fornecedores": [] },
-    { "nome": "ABERTTA SAÚDE", "pct": 0.60, "treinado": false, "em_uso": true, "fornecedores": [] },
+    { "nome": "ABERTTA SAÚDE", "pct": 0.60, "treinado": false, "usa_Token": true, "fornecedores": [] },
     { "nome": "UNIMED JUIZ DE FORA", "pct": 0.00, "treinado": false, "em_uso": true, "fornecedores": [] }
   ],
   "fornecedores_top": [
@@ -288,3 +288,4 @@
   ]
 
 }
+
