@@ -46,7 +46,7 @@
   .dot{width:.55rem;height:.55rem;border-radius:999px;display:inline-block;box-shadow:0 0 0 2px #fff}
   .dot.no{background:#ef4444}   /* Não treinado */
   .dot.ok{background:#10b981}   /* Treinado */
-  .dot.use{background:#3b82f6}  /* Em uso */
+  .dot.use{background:#3b82f6}  /* Em uso / Usa token */
 
   .status-label{font-size:.78rem;font-weight:700;margin-right:.25rem;background:transparent}
   .status-label.no{color:#ef4444}
@@ -108,7 +108,7 @@
 
 <script>
 /* ===== Config ===== */
-const DATA_VERSION = "v6";
+const DATA_VERSION = "v7";
 const DATA_URL = `data/app_data.json?v=${encodeURIComponent(DATA_VERSION)}`;
 
 /* ===== Helpers ===== */
@@ -132,9 +132,16 @@ const toArray = (val)=>{ if(val==null||val==="")return []; if(Array.isArray(val)
 const chipHtml = (arr)=> (arr.length? arr.map(x=>`<span class="chip">${x}</span>`).join("") : `<span class="chip">—</span>`);
 const hasReembolso = (s)=> /reembolso/i.test(String(s||""));
 
-/* Novo: status composto a partir de em_uso e treinado */
-function statusInfo(obj){
+/* ===== Status ===== */
+/* Contratante: mantém a lógica antiga (em_uso → "Em uso") */
+function statusInfoContratante(obj){
   if (obj && obj.em_uso) return { cls: "use", label: "Em uso" };
+  if (obj && obj.treinado) return { cls: "ok", label: "Treinado" };
+  return { cls: "no", label: "Não treinado" };
+}
+/* Fornecedor: agora usa 'usa_token' → label "Usa token" */
+function statusInfoFornecedor(obj){
+  if (obj && obj.usa_token) return { cls: "use", label: "Usa token" };
   if (obj && obj.treinado) return { cls: "ok", label: "Treinado" };
   return { cls: "no", label: "Não treinado" };
 }
@@ -171,7 +178,7 @@ function makeContrCard(c){
   const id="ctr_"+btoa(c.nome).replace(/=/g,"");
   const card=createEl("div",{className:"card",role:"region","aria-label":c.nome});
 
-  const st = statusInfo(c);
+  const st = statusInfoContratante(c);
 
   const row=createEl("div",{className:"row"});
   row.innerHTML = `
@@ -260,7 +267,7 @@ function renderTopFornecedores(){
       const pct=parsePct(f.pct);
       const id="top_"+btoa(f.nome).replace(/=/g,"");
 
-      const st = statusInfo(f);
+      const st = statusInfoFornecedor(f);
 
       const card=createEl("div",{className:"card"});
       const row=createEl("div",{className:"row"});
@@ -314,8 +321,8 @@ function renderFornecedores(q=""){
   const arr = [...FORNECEDORES]
     .filter(f=> !hasReembolso(f.nome) && !topSet.has(f.nome.toLowerCase()) && (!term || f.nome.toLowerCase().includes(term)))
     .sort((a,b)=> {
-      const ai = statusInfo(a), bi = statusInfo(b);
-      if (ai.cls !== bi.cls) { // Em uso (use) antes, depois ok, depois no
+      const ai = statusInfoFornecedor(a), bi = statusInfoFornecedor(b);
+      if (ai.cls !== bi.cls) { // Usa token (use) antes, depois ok, depois no
         const order = { "use": 0, "ok": 1, "no": 2 };
         return order[ai.cls] - order[bi.cls];
       }
@@ -335,7 +342,7 @@ function makeFornCard(f){
   const id="frn_"+btoa(f.nome).replace(/=/g,"");
   const card=createEl("div",{className:"card",role:"region","aria-label":f.nome});
 
-  const st = statusInfo(f);
+  const st = statusInfoFornecedor(f);
 
   const row=createEl("div",{className:"row"});
   row.innerHTML = `
@@ -403,4 +410,3 @@ load();
 </script>
 </body>
 </html>
-
