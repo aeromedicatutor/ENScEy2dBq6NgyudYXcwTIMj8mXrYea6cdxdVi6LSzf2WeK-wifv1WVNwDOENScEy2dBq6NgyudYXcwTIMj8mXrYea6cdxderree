@@ -2,7 +2,7 @@
   "schema_version": "v2",
   "contratantes": [
     { "nome": "Unimed Nacional", "pct": 20.52, "treinado": true, "fornecedores": [] },
-    { "nome": "Unimed Sete Lagoas", "pct": 16.74, "treinado": false, "fornecedores": [] },
+    { "nome": "Unimed Sete Lagoas", "pct": 16.74, "treinado": true, "fornecedores": [] },
     { "nome": "Vivest", "pct": 12.17, "treinado": true, "fornecedores": [] },
     { "nome": "Unimed Centro Oeste", "pct": 6.99, "treinado": false, "em_uso": true, "fornecedores": [] },
     { "nome": "PASA", "pct": 6.49, "treinado": true, "fornecedores": [] },
@@ -288,6 +288,7 @@
   ]
 
 }
+
 
 
 
