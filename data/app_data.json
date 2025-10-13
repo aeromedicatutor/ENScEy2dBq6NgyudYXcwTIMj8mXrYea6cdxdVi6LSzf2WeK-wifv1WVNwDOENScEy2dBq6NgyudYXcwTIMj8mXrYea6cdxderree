@@ -12,7 +12,7 @@
     { "nome": "UNIMED POÇOS DE CALDAS", "pct": 2.15, "treinado": true, "fornecedores": [] },
     { "nome": "CEMIG SAÚDE", "pct": 2.01, "treinado": true, "fornecedores": [] },
     { "nome": "UNIMED VARGINHA", "pct": 1.91, "treinado": true, "fornecedores": [] },
-    { "nome": "UNIMED GERAIS DE MINAS", "pct": 1.81, "treinado": true, "fornecedores": [] },
+    { "nome": "UNIMED GERAIS DE MINAS", "pct": 1.81, "em_uso": true, "fornecedores": [] },
     { "nome": "UNIMED INCONFIDENTES", "pct": 1.71, "treinado": true, "fornecedores": [] },
     { "nome": "UNIMED BELO HORIZONTE", "pct": 1.58, "treinado": false, "fornecedores": [] },
     { "nome": "UNIMED GUAXUPÉ", "pct": 1.05, "em_uso": true, "fornecedores": [] },
@@ -288,6 +288,7 @@
   ]
 
 }
+
 
 
 
