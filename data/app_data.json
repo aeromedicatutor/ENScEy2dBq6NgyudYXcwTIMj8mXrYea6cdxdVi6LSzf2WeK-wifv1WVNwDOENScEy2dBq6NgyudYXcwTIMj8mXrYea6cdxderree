@@ -1,9 +1,9 @@
 {
   "schema_version": "v2",
   "contratantes": [
-    { "nome": "Unimed Nacional", "pct": 20.52, "treinado": true, "fornecedores": [] },
+    { "nome": "Unimed Nacional", "pct": 20.52, "em_uso": true, "fornecedores": [] },
     { "nome": "Unimed BH/Sete Lagoas", "pct": 16.74, "em_uso": true, "fornecedores": [] },
-    { "nome": "Vivest", "pct": 12.17, "treinado": true, "fornecedores": [] },
+    { "nome": "Vivest", "pct": 12.17, "em_uso": true, "fornecedores": [] },
     { "nome": "Unimed Centro Oeste", "pct": 6.99, "treinado": false, "em_uso": true, "fornecedores": [] },
     { "nome": "PASA", "pct": 6.49, "treinado": true, "fornecedores": [] },
     { "nome": "UNIMED GOVERNADOR VALADARES", "pct": 4.44, "em_uso": true, "fornecedores": [] },
@@ -13,7 +13,7 @@
     { "nome": "CEMIG SAÚDE", "pct": 2.01, "treinado": true, "fornecedores": [] },
     { "nome": "UNIMED VARGINHA", "pct": 1.91, "treinado": true, "fornecedores": [] },
     { "nome": "UNIMED GERAIS DE MINAS", "pct": 1.81, "em_uso": true, "fornecedores": [] },
-    { "nome": "UNIMED INCONFIDENTES", "pct": 1.71, "treinado": true, "fornecedores": [] },
+    { "nome": "UNIMED INCONFIDENTES", "pct": 1.71, "em_uso": true, "fornecedores": [] },
     { "nome": "UNIMED BELO HORIZONTE", "pct": 1.58, "treinado": false, "fornecedores": [] },
     { "nome": "UNIMED GUAXUPÉ", "pct": 1.05, "em_uso": true, "fornecedores": [] },
     { "nome": "UNIMED ALTO SÃO FRANCISCO", "pct": 1.04, "treinado": true, "fornecedores": [] },
@@ -288,6 +288,7 @@
   ]
 
 }
+
 
 
 
