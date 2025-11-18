@@ -248,7 +248,7 @@
     { "nome": "UNIMED EXTREMO SUL COOP.TRAB.MEDICO", "treinado": false },
     { "nome": "Unimed Frutal", "treinado": false },
     { "nome": "Unimed Ilhéus", "treinado": false },
-    { "nome": "Unimed Inconfidentes", "treinado": false },
+    { "nome": "Unimed Inconfidentes", "usa_token": true },
     { "nome": "Unimed Itabira", "treinado": false },
     { "nome": "Unimed Itajubá", "treinado": false },
     { "nome": "Unimed Ituiutaba", "treinado": false },
@@ -288,6 +288,7 @@
   ]
 
 }
+
 
 
 
